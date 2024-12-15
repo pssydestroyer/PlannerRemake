@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    padding: 20px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.planner {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    padding: 20px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-input label {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+.sidebar {
+    border-right: 1px solid #000;
+    padding-right: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.day {
+    border: 1px solid #000;
+    padding: 15px;
+    position: relative;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.saturday {
+    grid-column: span 2;
+}
+
+.sunday {
+    grid-column: auto;
+}
+input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    font-family: inherit;
+    background: transparent;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom-color: #666;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #000;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent #000 transparent;
+    transform: rotate(45deg);
+    right: -10px;
+    top: -10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #000;
+        padding-bottom: 20px;
+    }
+
+    .calendar {
+        grid-template-columns: 1fr;
+    }
+
+    .sunday {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
